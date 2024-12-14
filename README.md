@@ -4,6 +4,8 @@ This project is to demonstrate the bug https://github.com/middyjs/middy/issues/1
 
 
 # To reproduce
+
+## Manually
 1. Login to aws account
 2. `npm run cdk deploy`
 3. Invoke the lambda using the test console with `payloadInputa.json`
@@ -31,6 +33,10 @@ This project is to demonstrate the bug https://github.com/middyjs/middy/issues/1
   }
 }
 ```
+
+## Automatically
+1. Login to aws account
+2. `npm run cdk:integ`
 
 ## Useful commands
 
