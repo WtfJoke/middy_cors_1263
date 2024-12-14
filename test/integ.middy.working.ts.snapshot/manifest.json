@@ -1,0 +1,180 @@
+{
+  "version": "38.0.1",
+  "artifacts": {
+    "middyy-cors-1263-working-test.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "middyy-cors-1263-working-test.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "middyy-cors-1263-working-test": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "middyy-cors-1263-working-test.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a2ad338938ca26ca09c76a924e41eee9bc47c0e557e0cdc3cef961f4bb9cec14.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "middyy-cors-1263-working-test.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "middyy-cors-1263-working-test.assets"
+      ],
+      "metadata": {
+        "/middyy-cors-1263-working-test/MiddyCors1263Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MiddyCors1263HandlerServiceRoleB23474AA"
+          }
+        ],
+        "/middyy-cors-1263-working-test/MiddyCors1263Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MiddyCors1263HandlerF2DA2741"
+          }
+        ],
+        "/middyy-cors-1263-working-test/Exports/Output{\"Ref\":\"MiddyCors1263HandlerF2DA2741\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefMiddyCors1263HandlerF2DA2741E6884597"
+          }
+        ],
+        "/middyy-cors-1263-working-test/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/middyy-cors-1263-working-test/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "middyy-cors-1263-working-test"
+    },
+    "middyycors1263workingintegtestDefaultTestDeployAssertD4AF209F.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "middyycors1263workingintegtestDefaultTestDeployAssertD4AF209F.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "middyycors1263workingintegtestDefaultTestDeployAssertD4AF209F": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "middyycors1263workingintegtestDefaultTestDeployAssertD4AF209F.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/55b7422de87f32649f38ed77584282f6778c6f6c4564cc6de4e620a97a8a248f.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "middyycors1263workingintegtestDefaultTestDeployAssertD4AF209F.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "middyy-cors-1263-working-test",
+        "middyycors1263workingintegtestDefaultTestDeployAssertD4AF209F.assets"
+      ],
+      "metadata": {
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke914c74c27c55d6089909dc0730d2fdce"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/Invoke": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke914c74c27c55d6089909dc0730d2fdceInvokeD12D0B0A"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/AssertionResults": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssertionResultsLambdaInvoke914c74c27c55d6089909dc0730d2fdce"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonFunction1488541a7b23466481b69b4408076b81Role37ABCE73"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonFunction1488541a7b23466481b69b4408076b81HandlerCD40AE9F"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/Invoke": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4Invoke3579ADEC"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/AssertionResults": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssertionResultsLambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

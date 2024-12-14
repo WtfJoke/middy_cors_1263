@@ -1,0 +1,405 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "middyy-cors-1263-working-test": {
+        "id": "middyy-cors-1263-working-test",
+        "path": "middyy-cors-1263-working-test",
+        "children": {
+          "MiddyCors1263Handler": {
+            "id": "MiddyCors1263Handler",
+            "path": "middyy-cors-1263-working-test/MiddyCors1263Handler",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "middyy-cors-1263-working-test/MiddyCors1263Handler/ServiceRole",
+                "children": {
+                  "ImportServiceRole": {
+                    "id": "ImportServiceRole",
+                    "path": "middyy-cors-1263-working-test/MiddyCors1263Handler/ServiceRole/ImportServiceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.173.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "middyy-cors-1263-working-test/MiddyCors1263Handler/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.173.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.173.0"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "middyy-cors-1263-working-test/MiddyCors1263Handler/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "middyy-cors-1263-working-test/MiddyCors1263Handler/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.173.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "middyy-cors-1263-working-test/MiddyCors1263Handler/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.173.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.173.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "middyy-cors-1263-working-test/MiddyCors1263Handler/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                      },
+                      "s3Key": "09c6c92be5549de95e93702f463cea2c2f782d604d9d65ea27253d36c95ff07d.zip"
+                    },
+                    "handler": "index.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "MiddyCors1263HandlerServiceRoleB23474AA",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs22.x"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.173.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+              "version": "2.173.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "middyy-cors-1263-working-test/Exports",
+            "children": {
+              "Output{\"Ref\":\"MiddyCors1263HandlerF2DA2741\"}": {
+                "id": "Output{\"Ref\":\"MiddyCors1263HandlerF2DA2741\"}",
+                "path": "middyy-cors-1263-working-test/Exports/Output{\"Ref\":\"MiddyCors1263HandlerF2DA2741\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.173.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.4.2"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "middyy-cors-1263-working-test/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.173.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "middyy-cors-1263-working-test/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.173.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.173.0"
+        }
+      },
+      "middyy-cors-1263-working-integ-test": {
+        "id": "middyy-cors-1263-working-integ-test",
+        "path": "middyy-cors-1263-working-integ-test",
+        "children": {
+          "DefaultTest": {
+            "id": "DefaultTest",
+            "path": "middyy-cors-1263-working-integ-test/DefaultTest",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "middyy-cors-1263-working-integ-test/DefaultTest/Default",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.4.2"
+                }
+              },
+              "DeployAssert": {
+                "id": "DeployAssert",
+                "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert",
+                "children": {
+                  "LambdaInvoke914c74c27c55d6089909dc0730d2fdce": {
+                    "id": "LambdaInvoke914c74c27c55d6089909dc0730d2fdce",
+                    "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce",
+                    "children": {
+                      "SdkProvider": {
+                        "id": "SdkProvider",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/SdkProvider",
+                        "children": {
+                          "AssertionsProvider": {
+                            "id": "AssertionsProvider",
+                            "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/SdkProvider/AssertionsProvider",
+                            "constructInfo": {
+                              "fqn": "constructs.Construct",
+                              "version": "10.4.2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/integ-tests-alpha.AssertionsProvider",
+                          "version": "2.173.0-alpha.0"
+                        }
+                      },
+                      "Default": {
+                        "id": "Default",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.173.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.173.0"
+                        }
+                      },
+                      "Invoke": {
+                        "id": "Invoke",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/Invoke",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.173.0"
+                        }
+                      },
+                      "AssertionResults": {
+                        "id": "AssertionResults",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke914c74c27c55d6089909dc0730d2fdce/AssertionResults",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnOutput",
+                          "version": "2.173.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/integ-tests-alpha.LambdaInvokeFunction",
+                      "version": "2.173.0-alpha.0"
+                    }
+                  },
+                  "SingletonFunction1488541a7b23466481b69b4408076b81": {
+                    "id": "SingletonFunction1488541a7b23466481b69b4408076b81",
+                    "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81",
+                    "children": {
+                      "Staging": {
+                        "id": "Staging",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Staging",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.173.0"
+                        }
+                      },
+                      "Role": {
+                        "id": "Role",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Role",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.173.0"
+                        }
+                      },
+                      "Handler": {
+                        "id": "Handler",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/SingletonFunction1488541a7b23466481b69b4408076b81/Handler",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.173.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "constructs.Construct",
+                      "version": "10.4.2"
+                    }
+                  },
+                  "LatestNodeRuntimeMap": {
+                    "id": "LatestNodeRuntimeMap",
+                    "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LatestNodeRuntimeMap",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnMapping",
+                      "version": "2.173.0"
+                    }
+                  },
+                  "LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4": {
+                    "id": "LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4",
+                    "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4",
+                    "children": {
+                      "SdkProvider": {
+                        "id": "SdkProvider",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/SdkProvider",
+                        "children": {
+                          "AssertionsProvider": {
+                            "id": "AssertionsProvider",
+                            "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/SdkProvider/AssertionsProvider",
+                            "constructInfo": {
+                              "fqn": "constructs.Construct",
+                              "version": "10.4.2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/integ-tests-alpha.AssertionsProvider",
+                          "version": "2.173.0-alpha.0"
+                        }
+                      },
+                      "Default": {
+                        "id": "Default",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/Default",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/Default/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.173.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.173.0"
+                        }
+                      },
+                      "Invoke": {
+                        "id": "Invoke",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/Invoke",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.173.0"
+                        }
+                      },
+                      "AssertionResults": {
+                        "id": "AssertionResults",
+                        "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/LambdaInvoke8f3e3356027b6d22a069e5f267b9a4c4/AssertionResults",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnOutput",
+                          "version": "2.173.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/integ-tests-alpha.LambdaInvokeFunction",
+                      "version": "2.173.0-alpha.0"
+                    }
+                  },
+                  "BootstrapVersion": {
+                    "id": "BootstrapVersion",
+                    "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/BootstrapVersion",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnParameter",
+                      "version": "2.173.0"
+                    }
+                  },
+                  "CheckBootstrapVersion": {
+                    "id": "CheckBootstrapVersion",
+                    "path": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert/CheckBootstrapVersion",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnRule",
+                      "version": "2.173.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Stack",
+                  "version": "2.173.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/integ-tests-alpha.IntegTestCase",
+              "version": "2.173.0-alpha.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/integ-tests-alpha.IntegTest",
+          "version": "2.173.0-alpha.0"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.4.2"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.173.0"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": "38.0.1",
+  "testCases": {
+    "middyy-cors-1263-working-integ-test/DefaultTest": {
+      "stacks": [
+        "middyy-cors-1263-working-test"
+      ],
+      "assertionStack": "middyy-cors-1263-working-integ-test/DefaultTest/DeployAssert",
+      "assertionStackName": "middyycors1263workingintegtestDefaultTestDeployAssertD4AF209F"
+    }
+  }
+}
