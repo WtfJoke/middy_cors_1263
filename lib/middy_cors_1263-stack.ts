@@ -1,16 +1,20 @@
-import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import { resolve } from "node:path";
+import * as cdk from "aws-cdk-lib";
+import { Runtime } from "aws-cdk-lib/aws-lambda";
+import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
+import type { Construct } from "constructs";
 
 export class MiddyCors1263Stack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+	constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+		super(scope, id, props);
 
-    // The code that defines your stack goes here
+		const lambda = new NodejsFunction(this, "MiddyCors1263Handler", {
+			entry: resolve("lib", "handler.ts"),
+			runtime: Runtime.NODEJS_22_X,
+		});
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'MiddyCors1263Queue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
-  }
+		new cdk.CfnOutput(this, "MiddyCors1263HandlerFunctionName", {
+			value: lambda.functionName,
+		});
+	}
 }

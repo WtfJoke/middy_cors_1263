@@ -1,8 +1,36 @@
-# Welcome to your CDK TypeScript project
+# Bug reproducer
 
-This is a blank project for CDK development with TypeScript.
+This project is to demonstrate the bug https://github.com/middyjs/middy/issues/1263
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+
+# To reproduce
+1. Login to aws account
+2. `npm run cdk deploy`
+3. Invoke the lambda using the test console with `payloadInputa.json`
+4. Lambda responds with 
+```json
+{
+  "statusCode": 200,
+  "body": "{\"hi\":\"there\"}",
+  "headers": {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "http://localhost:3000",
+    "Vary": "Origin"
+  }
+}
+```
+4. Invoke the lambda using the test console with `payloadInputb.json`, `Access-Control-Allow-Origin` is still `http://localhost:3000` instead of expected `https://example.org`.
+```json
+{
+  "statusCode": 200,
+  "body": "{\"hi\":\"there\"}",
+  "headers": {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "http://localhost:3000",
+    "Vary": "Origin, Origin"
+  }
+}
+```
 
 ## Useful commands
 
