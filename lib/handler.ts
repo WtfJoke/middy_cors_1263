@@ -1,6 +1,7 @@
 import middy, { type MiddyfiedHandler } from "@middy/core";
 import cors from "@middy/http-cors";
 import type { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import inputOutputLogger from "@middy/input-output-logger";
 
 const CONTENT_TYPE_JSON_HEADER: Record<string, string> = {
 	"Content-Type": "application/json",
@@ -22,4 +23,7 @@ const lambdaHandler = async (
 export const handler: MiddyfiedHandler<
 	APIGatewayProxyEvent,
 	APIGatewayProxyResult
-> = middy().use(cors({ origins })).handler(lambdaHandler);
+> = middy()
+	.use(inputOutputLogger())
+	.use(cors({ origins }))
+	.handler(lambdaHandler);
